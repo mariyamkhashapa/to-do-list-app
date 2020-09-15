@@ -1,45 +1,47 @@
-// Select the Elements
+// لتحديد العناصر 
 const clear = document.querySelector('.clear');
 const dateElement = document.getElementById('date');
 const list = document.getElementById('list');
 const input = document.getElementById('input');
 
-// Classes names
+// تحديد الانواع
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
-// Variables
+// متغيرات
 let LIST, id;
 
-// get item from localstorage
+// تخزين
 let data = localStorage.getItem("TODO");
 
-// check if data is not empty
+// نشوف في عنصر ولا فاضي
 if (data) {
   LIST = JSON.parse(data);
-  id = LIST.length; // set the id to the last one in the list
-  loadList(LIST); // load the list to the user interface
+  // set the id to the last one in the list
+  id = LIST.length; 
+   // تظهر للمستخدم 
+  loadList(LIST);
 } else {
-  // if data isn't empty
+  // لو العنصر مش فاضي ياخد اي دي 0
   LIST = [];
   id = 0;
 }
 
-// load items to the user's interface
+// اظهار العناصر للمستخدم
 function loadList(array) {
   array.forEach(function (item) {
     addToDo(item.name, item.id, item.done, item.trash);
   });
 }
 
-// clear the localstorage
+// نمسح العناصر من عند المستخدم
 clear.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
 })
 
-// Show todays date
+// نظهر تاريخ اليوم
 const options = { weekday: "long", month: "short", day: "numeric" };
 const today = new Date();
 
@@ -64,12 +66,12 @@ function addToDo(toDo, id, done, trash) {
   list.insertAdjacentHTML(position, item);
 }
 
-// add an item to the list user the enter key
+// نخلي لما يضغط علي انتر العنصر يتضاف
 document.addEventListener("keyup", function (even) {
   if (event.keyCode == 13) {
     const toDo = input.value;
 
-    // if the input isn't empty
+    // لو العنصر فاضي مش هيتضاف
     if (toDo) {
       addToDo(toDo, id, false, false);
 
@@ -80,7 +82,7 @@ document.addEventListener("keyup", function (even) {
         trash: false
       });
 
-      // add item to localstorage (this code must be added where the LIST array updated)
+      // اضافه العناصر للمستخدم 
       localStorage.setItem("TODO", JSON.stringify(LIST));
 
       id++;
@@ -89,7 +91,7 @@ document.addEventListener("keyup", function (even) {
   }
 });
 
-// complete to do
+// نكمل القايمه
 function completeToDo(element) {
   element.classList.toggle(CHECK);
   element.classList.toggle(UNCHECK);
@@ -98,7 +100,7 @@ function completeToDo(element) {
   LIST[element.id].done = LIST[element.id].done ? false : true;
 }
 
-// remove to do
+// نمسح العنصر المطلوب
 function removeToDo(element) {
   element.parentNode.parentNode.removeChild(element.parentNode);
 
@@ -116,6 +118,6 @@ list.addEventListener("click", function (event) {
     removeToDo(element);
   }
 
-  // add item to localstorage (this code must be added where the LIST array updated)
+  // اضافه للمخزن
   localStorage.setItem("TODO", JSON.stringify(LIST));
 })
