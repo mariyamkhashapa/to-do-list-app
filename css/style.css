@@ -5,18 +5,18 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 
-/* ------------ container ------------ */
+
 .container{
     padding:10px;
     width:380px;
     margin:0 auto;
 }
 
-/* ------------ header ------------ */
+
 .header{
     width: 380px;
     height:200px;
-    background-image: url('../img/bg2.jpg');
+    background-image: url('../img/milky-way-2695569_960_720.jpg');
     background-size: 100% 200%;
     background-repeat: no-repeat;
     border-radius: 15px 15px 0 0;
@@ -27,7 +27,7 @@ body{
     height: 30px;
     position: absolute;
     right:20px;
-    top: 20px;
+color: white;
 }
 .clear i{
     font-size: 30px;
@@ -37,7 +37,7 @@ body{
     cursor: pointer;
     text-shadow: 1px 3px 5px #000;
     transform: rotate(45deg);
-}
+    color:white;}
 #date{
     position: absolute;
     bottom: 10px;
@@ -52,8 +52,9 @@ body{
     width:380px;
     height: 350px;
     max-height:350px;
-    background-color: #FFF;
+    background-image: url('../img/High-Qualiy-White-wood-for-mockup-Background.jpg');
     overflow: auto;
+
 }
 .content::-webkit-scrollbar { 
     display: none; 
@@ -95,12 +96,12 @@ body{
     font-size: 20px;
     left:50px;
     top:5px;
-    background-color: #FFF;
+  
     max-width:285px;
 }
 .lineThrough{
     text-decoration: line-through;
-    color : #ccc;
+    color :red
 }
 .item i.de{
     position: absolute;
@@ -112,20 +113,22 @@ body{
     color:#af0000;
     cursor: pointer;
 }
-/* ------------ add item ------------ */
+
 .add-to-do{
     position: relative;
     width: 360px;
     height:40px;
-    background-color: #FFF;
+    background-color:white;
     padding: 10px;
     border-top: 1px solid rgba(0,0,0,0.1);
+
+    
 }
 .add-to-do i{
     position: absolute;
     font-size: 40px;
-    color: #4162f6;
-}
+    color: darkblue;}
+    
 
 .add-to-do input{
     position: absolute;
@@ -136,24 +139,4 @@ body{
     border: none;
     font-size: 20px;
     padding-left:10px;
-}
-.add-to-do input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-}
-.add-to-do input::-moz-placeholder { /* Firefox 19+ */
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-}
-.add-to-do input:-ms-input-placeholder { /* IE 10+ */
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-}
-.add-to-do input:-moz-placeholder { /* Firefox 18- */
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
 }
